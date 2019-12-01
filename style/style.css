@@ -1,0 +1,96 @@
+body {
+  background: #f0eeee;
+}
+
+.pizza-list {
+  margin-top: 50px;
+}
+
+.more {
+  margin-top: 10px;
+}
+
+.box {
+  margin-bottom: 20px;
+}
+
+.date {
+  margin-top: 10px;
+}
+
+/* header styling starts */
+
+nav {
+  background-color: #fff;
+}
+
+.brand {
+  color: #b89062;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.brand:hover {
+  color: #b99469;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #b48a59;
+  border: rgb(184, 144, 98);
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: rgb(179, 125, 63);
+  border: rgb(187, 152, 111);
+  color: #fff;
+}
+
+/* header styling ends */
+
+/* footer styling starts */
+
+.terms {
+  color: rgb(102, 99, 99);
+}
+
+footer {
+  margin-top: 110px;
+}
+
+/* footer styling ends */
+
+/* add.php starts */
+
+.form-section {
+  margin-top: 50px;
+  width: 50%;
+  padding: 20px;
+  background: rgb(255, 255, 255);
+  border: 0px;
+  border-radius: 10px;
+}
+
+.form-section h4 {
+  text-align: center;
+  color: rgb(153, 147, 147);
+}
+
+form input {
+  border: none;
+  border-width: 0;
+  box-shadow: none;
+}
+
+.form-values {
+  margin: auto;
+  width: 50%;
+  margin-top: 30px;
+}
+
+.error {
+  color: red;
+}
+/* add.php ends */
