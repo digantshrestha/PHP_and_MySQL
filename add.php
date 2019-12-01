@@ -55,20 +55,24 @@
         if(array_filter($error)){
             echo "There is an error";
         }else{
-            // mysqli_real_escape_string -> used to prevent maliceous sql code
-            $email = mysqli_real_escape_string($sql->connection(),$_POST['email']);
-            $title = mysqli_real_escape_string($sql->connection(),$_POST['title']);
-            $ingredients = mysqli_real_escape_string($sql->connection(),$_POST['ingredients']);
+            $sql->queryCheck($title, $email, $ingredients);
+            
+            $title = $sql->getTitle();
+            $email = $sql->getEmail();
+            $ingredients = $sql->getIngredients();
 
             //create insert query
             $query = "INSERT INTO pizzas(title, email, ingredients) VALUES(
                 '$title', '$email', '$ingredients')";
+
+            $sql->setQuery($query);
+            $sql->setSQL();                
             
-            if(mysqli_query($sql->connection(), $query)){
-                header("Location: index.php");//redirecting to other page
-            }else{
-                echo "Query error ". mysqli_error($sql->connection());
-            }
+            // if(mysqli_query($sql->connection(), $query)){
+            //     header("Location: index.php");//redirecting to other page
+            // }else{
+            //     echo "Query error ". mysqli_error($sql->connection());
+            // }
         }
     }
 

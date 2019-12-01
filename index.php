@@ -13,7 +13,7 @@
 
     <div class="container pizza-list">
         <div class="row">
-        <?php foreach($sql->process() as $p): ?>
+        <?php foreach($sql->getSQL() as $p): ?>
 
             <div class="col-md-6 box">
                 <div class="card">

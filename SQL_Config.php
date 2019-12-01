@@ -1,7 +1,9 @@
 <?php
 
   class SQL_Config{
-    private $conn,$result,$query,$pizzas,$serverName, $userName, $password, $databaseName;
+    private $conn,$result,$query,$pizzas;
+    private $serverName, $userName, $password, $databaseName;
+    private $title, $email, $ingredients;
 
     function __construct(){}
 
@@ -32,12 +34,40 @@
       }
     }
 
-    public function process(){
+    public function getSQL(){
       $result = mysqli_query($this->connection(), $this->query);//make query to $conn and get query(result)
       $pizzas = mysqli_fetch_all($result, MYSQLI_ASSOC);//fetching result as associative array
       mysqli_free_result($result);//freeing memory from vriable $result
       mysqli_close($this->connection());//closing connection to DB
       return $pizzas;
+    }
+
+    public function setSQL(){
+      if(mysqli_query($this->connection(), $this->query)){
+        header('Location: index.php');
+      }else{
+        echo "Query error : " . mysqli_error($this->connection());
+      }
+
+    }
+
+    public function queryCheck($title, $email, $ingredients){
+      // mysqli_real_escape_string -> used to prevent maliceous sql code
+      $this->title = mysqli_real_escape_string($this->connection(), $title);
+      $this->email = mysqli_real_escape_string($this->connection(), $email);
+      $this->ingredients = mysqli_real_escape_string($this->connection(), $ingredients);
+    }
+
+    public function getTitle(){
+      return $this->title;
+    }
+
+    public function getEmail(){
+      return $this->email;
+    }
+
+    public function getIngredients(){
+      return $this->ingredients;
     }
   }
 
