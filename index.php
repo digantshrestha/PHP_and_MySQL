@@ -21,7 +21,7 @@
                         <h6 class="card-title"><?php echo $p['title']; ?></h6>
                         <div class="card-text"><?php echo $p['ingredients']; ?></div>
                         <small class="float-left date">Created At : <?php echo $p['created_at']; ?></small>
-                        <a href="#" class="btn btn-sm more float-right">More Info</a>
+                        <a href="details.php?id=<?php echo $p['id']; ?>" class="btn btn-sm more float-right">More Info</a>
                     </div>
                 </div>
             </div>

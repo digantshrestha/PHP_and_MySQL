@@ -94,3 +94,15 @@ form input {
   color: red;
 }
 /* add.php ends */
+
+/* details.php start */
+
+.details {
+  margin: auto;
+  margin-top: 50px;
+  width: 70%;
+  padding: 30px;
+  color: rgb(146, 143, 143);
+}
+
+/* details.php end */

@@ -4,6 +4,7 @@
     private $conn,$result,$query,$pizzas;
     private $serverName, $userName, $password, $databaseName;
     private $title, $email, $ingredients;
+    private $singleResult, $pizza;
 
     function __construct(){}
 
@@ -40,6 +41,14 @@
       mysqli_free_result($result);//freeing memory from vriable $result
       mysqli_close($this->connection());//closing connection to DB
       return $pizzas;
+    }
+
+    public function getSingleSQL(){
+      $singleResult = mysqli_query($this->connection(), $this->query);
+      $pizza = mysqli_fetch_assoc($singleResult);//to get single record
+      mysqli_free_result($singleResult);
+      mysqli_close($this->connection());
+      return $pizza;
     }
 
     public function setSQL(){
