@@ -10,6 +10,6 @@
     <nav class="navbar">
         <div class="container">
             <a href="../index.php" class="navbar-brand brand">Pizza Place</a>
-            <a href="add.php" class="btn">Add Pizza</a>
+            <a href="add.php" class="btn nav-btn-brand">Add Pizza</a>
         </div>
     </nav>

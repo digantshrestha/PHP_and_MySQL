@@ -106,22 +106,11 @@
                 </div> 
             </div>
 
-            <input class="btn" type="submit" name="submit" value="Submit">
+            <input class="btn btn-brand" type="submit" name="submit" value="Submit">
 
 
         </form>
     </section>
-
-    <?php if(isset($_POST['submit'])): ?>
-        <div class="form-values">
-            <h5>You Entered</h5>
-            <ul class="list-group container">
-                <li class="list-group-item"><?php echo $email; ?></li>
-                <li class="list-group-item"><?php echo $title; ?></li>
-                <li class="list-group-item"><?php echo $ingredients; ?></li>
-            </ul>
-        </div>
-    <?php endif; ?>
 
     <?php include("templates/footer.php"); ?>
 </html>
